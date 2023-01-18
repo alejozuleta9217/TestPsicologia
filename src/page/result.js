@@ -20,11 +20,12 @@ import {
 } from "devextreme-react/chart";
 
 import { Grid, makeStyles, CardContent, CardMedia } from "@material-ui/core";
+import DataGrid, { Column} from 'devextreme-react/data-grid'
 import logo from "./psicologia.png";
 import Dash from "../common/datosdashboard";
 const useStyle = makeStyles({
   datarepository: {
-    margin: "13px 10px 0px 10px",
+    margin: "1px 0px 0px 0px",
     color: "#fbfbfb",
     backgroundColor: "#544040",
     lineHeight: "inherit",
@@ -168,6 +169,7 @@ const Cardsmapas = () => {
   let distorsion = Dash.Distorsion(ph_venta_arriendo);
   let teson = Dash.Teson(ph_venta_arriendo);
   let dimensiones = Dash.Dimensiones(ph_venta_arriendo);
+  let dataSourceRegister = Dash.fileregistrer(ph_venta_arriendo);
   return (
     <Grid item xs container direction="column" justifyContent="center">
       <CardContent className={classes.centerText}>
@@ -196,6 +198,35 @@ const Cardsmapas = () => {
             ></TextField>            
             <button href="#" onClick={ceeddownloaduser} className={classes.botonpass}>Enviar</button>
           </Grid>
+          
+      <DataGrid
+        className={classes.datarepository}
+        id="gridContainer"
+        dataSource={dataSourceRegister}
+        
+        columnAutoWidth={true}
+        showBorders={true}
+        width={550}
+      >
+        <Column
+          dataField="name"
+          caption="Grado"
+          alignment="center"
+          width={250}
+        />
+        <Column
+          dataField="mass"
+          caption="Valores"
+          alignment="center"
+          width={150}
+        />
+        <Column
+          dataField="id"
+          caption="Valores"
+          alignment="center"
+          width={150}
+        />
+      </DataGrid>
             <Grid container item xs className={classes.marg2} direction="row">
             <Grid
                 container
