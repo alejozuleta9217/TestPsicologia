@@ -122,6 +122,11 @@ const Data = () => {
   });
  }
 
+ const ceeddownloaduser1 = () => {
+  history('/Result')   
+ 
+}
+
   return (
     <Grid
       container
@@ -297,8 +302,8 @@ const Data = () => {
           alignItems="center"
           className={classes.itemTextFieldceedtext}
         >
-          <button href="#" onClick={ceeddownloaduser} className={classes.botonpass}>Enviar</button>
-          
+          <button href="#" onClick={ceeddownloaduser} className={classes.botonpass}>Registrar</button>
+          <button href="#" onClick={ceeddownloaduser1} className={classes.botonpass}>Buscar Resultados</button>
         </Grid>
       </Grid>   
       <Loader open={openLoading}></Loader>   
