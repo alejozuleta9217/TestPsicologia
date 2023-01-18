@@ -313,7 +313,41 @@ export default class Dash {
   }
 
   static fileregistrer(data) { 
-       let aperturamentar = ((36+parseInt(data.aperturaalaculturap.peso)+parseInt(data.aperturaalaexperienciap.peso))-(parseInt(data.aperturaalaculturan.peso)+parseInt(data.aperturaalaexperiencian.peso)))
+       if(data.length<=0){
+        return [
+            {
+              id: "Sin datos",
+              name: "Sin datos",
+              mass: "Sin datos",
+            },
+            {
+              id: "Sin datos",
+              name: "Sin datos",
+              mass: "Sin datos",              
+            },
+            {
+              id: "Sin datos",
+              name: "Sin datos",              
+              mass: "Sin datos",
+            },
+            {
+              id: "Sin datos",
+              name: "Sin datos",
+              mass: "Sin datos",
+            },
+            {
+              id: "Sin datos",
+              name: "Sin datos",
+              mass: "Sin datos",
+            },
+            {
+              id: "Sin datos",
+              name: "Sin datos",
+              mass: "Sin datos",
+            }
+          ];
+       }else{
+        let aperturamentar = ((36+parseInt(data.aperturaalaculturap.peso)+parseInt(data.aperturaalaexperienciap.peso))-(parseInt(data.aperturaalaculturan.peso)+parseInt(data.aperturaalaexperiencian.peso)))
        let estabilidademocional = ((36+parseInt(data.controldeemocionesp.peso)+parseInt(data.controldeimpulsosp.peso))-(parseInt(data.controldeemocionesn.peso)+parseInt(data.controldeimpulsosn.peso)))
        let afabilidad = ((36+parseInt(data.cooperacionp.peso)+parseInt(data.cordialidadp.peso))-(parseInt(data.cooperacionn.peso)+parseInt(data.cordialidadn.peso)))
        let energia = ((36+parseInt(data.dinamismop.peso)+parseInt(data.dominanciap.peso))-(parseInt(data.dinamismon.peso)+parseInt(data.dominancian.peso)))
@@ -479,5 +513,6 @@ export default class Dash {
               mass: ((36+parseInt(data.escrupulosidadp.peso)+parseInt(data.perseveranciap.peso))-(parseInt(data.escrupulosidadn.peso)+parseInt(data.perseverancian.peso))),
             }
           ];
+       }
   }
 }
